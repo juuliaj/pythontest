@@ -31,10 +31,3 @@ def test_kiuruvesi_postinumerot(mocker):
     assert tulos == '74700, 74701'
 
 
-def test_bug_is_real(mocker):
-    data = ERIKOISTAPAUKSET
-    mocker.patch('http_pyynto.hae_postinumerot', return_value=data)
-
-    tulos = postinumerot.etsi_postinumerot('SMART POST')
-
-    assert tulos == '65374, 74704'
